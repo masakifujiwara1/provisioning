@@ -48,9 +48,23 @@ python --version
 pip3 install -e .
 pip3 install -r requirements_torch.txt
 pip3 install -r requirements.txt
+pip3 install "timm>=0.4.12,<0.6.0"
+pip3 install "Pillow<10.0.0"
 ```
 ### running scripts
 ```
 cd nuplan-devkit
+python3 nuplan/planning/script/run_training.py \
+    experiment_name=raster_experiment \
+    py_func=train \
+    +training=training_raster_model \
+    scenario_builder=nuplan_mini \
+    scenario_filter.limit_total_scenarios=500 \
+    lightning.trainer.params.max_epochs=10 \
+    data_loader.params.batch_size=8 \
+    data_loader.params.num_workers=8
+```
+after
+```
 python3 nuplan/planning/script/run_nuboard.py
 ```
