@@ -74,3 +74,4 @@ dashboard
 ```
 python3 nuplan/planning/script/run_nuboard.py
 ```
+<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/735ff440-af3c-49be-b922-79104fdd6159" />
