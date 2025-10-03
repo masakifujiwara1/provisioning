@@ -52,8 +52,12 @@ pip3 install "timm>=0.4.12,<0.6.0"
 pip3 install "Pillow<10.0.0"
 ```
 ### running scripts
+change dir
 ```
 cd nuplan-devkit
+```
+training
+```
 python3 nuplan/planning/script/run_training.py \
     experiment_name=raster_experiment \
     py_func=train \
@@ -64,7 +68,17 @@ python3 nuplan/planning/script/run_training.py \
     data_loader.params.batch_size=8 \
     data_loader.params.num_workers=8
 ```
-after
+simulation
+```
+python3 nuplan/planning/script/run_simulation.py \
+    +simulation=open_loop_boxes \
+    planner=simple_planner \
+    scenario_builder=nuplan_mini \
+    scenario_filter=all_scenarios \
+    scenario_filter.scenario_types="[near_multiple_vehicles, on_pickup_dropoff, starting_unprotected_cross_turn, high_magnitude_jerk]" \
+    scenario_filter.num_scenarios_per_type=10
+```
+dashboard
 ```
 python3 nuplan/planning/script/run_nuboard.py
 ```
