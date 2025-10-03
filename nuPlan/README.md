@@ -35,14 +35,6 @@ conda env create -f environment.yml
 ```
 
 ## without virtual python environment
-### alternative python version
-```
-sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.9 1
-```
-check python version
-```
-python --version
-```
 ### install requirements
 ```
 pip3 install -e .
