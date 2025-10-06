@@ -68,7 +68,7 @@ python3 nuplan/planning/script/run_training.py \
     data_loader.params.batch_size=8 \
     data_loader.params.num_workers=8
 ```
-simulation
+simulation with simple_planner
 ```
 python3 nuplan/planning/script/run_simulation.py \
     +simulation=open_loop_boxes \
@@ -77,6 +77,19 @@ python3 nuplan/planning/script/run_simulation.py \
     scenario_filter=all_scenarios \
     scenario_filter.scenario_types="[near_multiple_vehicles, on_pickup_dropoff, starting_unprotected_cross_turn, high_magnitude_jerk]" \
     scenario_filter.num_scenarios_per_type=10
+```
+simulation with ml_planner
+```
+python3 nuplan/planning/script/run_simulation.py \
+    '+simulation=open_loop_boxes' \
+    'model=raster_model' \
+    'planner=ml_planner' \
+    'planner.ml_planner.model_config=${model}' \
+    'planner.ml_planner.checkpoint_path="/home/ubuntu/nuplan/exp/exp/raster_experiment/raster_model/2025.10.06.16.45.38/best_model/epoch=9-step=409.ckpt"' \
+    'scenario_builder=nuplan_mini' \
+    'scenario_filter=all_scenarios' \
+    'scenario_filter.scenario_types=[near_multiple_vehicles, on_pickup_dropoff, starting_unprotected_cross_turn, high_magnitude_jerk]' \
+    'scenario_filter.num_scenarios_per_type=10'
 ```
 dashboard
 ```
