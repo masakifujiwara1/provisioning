@@ -1,7 +1,15 @@
 # Install nuPlan
 ## docker 
+### cuda11.1 (official)
 ```
 git clone -b 11.1.1-devel-ubuntu20.04-nuPlan git@github.com:masakifujiwara1/cudagl_docker.git
+cd cudagl_docker
+docker compose up gpu -d
+./login.sh
+```
+### cuda11.7 (available pytorch2.0)
+```
+git clone -b 11.7.1-cudnn8-devel-ubuntu22.04-nuPlan git@github.com:masakifujiwara1/cudagl_docker.git
 cd cudagl_docker
 docker compose up gpu -d
 ./login.sh
