@@ -10,6 +10,9 @@ docker compose up gpu -d
 ## devkit install
 ```
 cd && git clone https://github.com/motional/nuplan-devkit.git && cd nuplan-devkit
+export NUPLAN_DATA_ROOT="$HOME/nuplan/dataset"
+export NUPLAN_MAPS_ROOT="$HOME/nuplan/dataset/maps"
+export NUPLAN_EXP_ROOT="$HOME/nuplan/exp"
 ```
 
 ## python install
