@@ -84,8 +84,6 @@ install
 pip3 install -e .
 pip3 install -r requirements_torch.txt
 pip3 install -r requirements.txt
-pip3 install "timm>=0.4.12,<0.6.0"
-pip3 install "Pillow<10.0.0"
 ```
 
 ### running scripts
