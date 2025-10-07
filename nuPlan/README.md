@@ -55,6 +55,7 @@ conda env create -f environment.yml
 
 ## without virtual python environment
 ### install requirements
+#### cuda11.1
 ```
 pip3 install -e .
 pip3 install -r requirements_torch.txt
@@ -62,6 +63,31 @@ pip3 install -r requirements.txt
 pip3 install "timm>=0.4.12,<0.6.0"
 pip3 install "Pillow<10.0.0"
 ```
+#### cuda11.7
+change requirements_torch.txt
+```
+--find-links https://download.pytorch.org/whl/torch_stable.html
+--find-links https://data.pyg.org/whl/torch-1.9.0+cu111.html
+future==0.18.1
+pytorch-lightning==1.3.8    # Used widely
+setuptools==59.5.0
+timm  # Used in model_raster
+
+torch==2.0.0+cu117;      platform_system == "Linux"
+torch==1.9.0;            platform_system == "Darwin"
+torch_scatter==2.0.9; platform_system == "Linux"
+torchmetrics==0.7.2
+torchvision==0.15.1+cu117
+```
+install
+```
+pip3 install -e .
+pip3 install -r requirements_torch.txt
+pip3 install -r requirements.txt
+pip3 install "timm>=0.4.12,<0.6.0"
+pip3 install "Pillow<10.0.0"
+```
+
 ### running scripts
 change dir
 ```
