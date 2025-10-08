@@ -23,6 +23,21 @@ https://github.com/motional/nuplan-devkit/tree/master/nuplan/planning/simulation
 - idm_agents: intelligent driver model
 - tracks_observation: log replay
 
+### Ex. Add custom agents
+1. Add [Hydra config](https://github.com/masakifujiwara1/nuplan-devkit/blob/dev/nuplan/planning/script/config/simulation/observation/simple_control_agents_observation.yaml)  
+2. Add [Python file](https://github.com/masakifujiwara1/nuplan-devkit/blob/dev/nuplan/planning/simulation/observation/simple_control_agents.py)
+
+Run simulation
+```
+python3 nuplan/planning/script/run_simulation.py \
+    +simulation=open_loop_boxes \
+    planner=simple_planner \
+    scenario_builder=nuplan_mini \
+    scenario_filter=all_scenarios \
+    scenario_filter.scenario_types="[near_multiple_vehicles, on_pickup_dropoff, starting_unprotected_cross_turn, high_magnitude_jerk]" \
+    scenario_filter.num_scenarios_per_type=10 \
+    observation=simple_control_agents_observation
+```
 
 ## Ex. Use [Diffusion-Planner](https://github.com/ZhengYinan-AIR/Diffusion-Planner.git)
 Inside docker 
