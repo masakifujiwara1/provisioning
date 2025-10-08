@@ -24,7 +24,7 @@ https://github.com/motional/nuplan-devkit/tree/master/nuplan/planning/simulation
 - tracks_observation: log replay
 
 
-## Ex. Use Diffusion-Planner
+## Ex. Use [Diffusion-Planner](https://github.com/ZhengYinan-AIR/Diffusion-Planner.git)
 Inside docker 
 ```
 cd
